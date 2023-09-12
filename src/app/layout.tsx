@@ -1,18 +1,30 @@
-import './globals.css'
+import Navbar from "@/components/Navbar";
+import "./globals.css";
+import Footer from "@/components/Footer";
+import { StateContext } from "./context/StateContext";
+import { Toaster } from "react-hot-toast";
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
       <head />
-      <body>{children}</body>
+      <body className="layout">
+        <StateContext>
+          <Toaster />
+          <header>
+            <Navbar />
+          </header>
+          <main className="main-container"></main>
+          {children}
+          <footer>
+            <Footer />
+          </footer>
+        </StateContext>
+      </body>
     </html>
-  )
+  );
 }
