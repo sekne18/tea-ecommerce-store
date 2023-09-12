@@ -14,4 +14,3 @@ npm run dev
 - Global store (StateContext)
 - Strapi (payments)
 - Sanity (cms)
-- 
