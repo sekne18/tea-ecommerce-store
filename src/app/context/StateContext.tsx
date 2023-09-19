@@ -11,6 +11,9 @@ type ContextType = {
   incQty: () => void;
   decQty: () => void;
   setShowCart: (value: boolean) => void;
+  setCartItems: (value: []) => void;
+  setTotalPrice: (value: number) => void;
+  setTotalQuantities: (value: number) => void;
   onAdd: (product: ProductType, quantity: number) => void;
   toggleCartItemQuantity: (id: number, value: string) => void;
   onRemove: (id: ProductType) => void;
@@ -23,9 +26,12 @@ const Context = createContext<ContextType>({
   totalQuantities: 0,
   qty: 0,
   incQty: () => {},
+  setTotalPrice: () => {},
+  setTotalQuantities: () => {},
   decQty: () => {},
   setShowCart: () => {},
   onAdd: () => {},
+  setCartItems: () => {},
   toggleCartItemQuantity: () => {},
   onRemove: () => {},
 });
@@ -128,6 +134,9 @@ export const StateContext = ({ children }: any) => {
         showCart,
         cartItems,
         setShowCart,
+        setCartItems,
+        setTotalPrice,
+        setTotalQuantities,
         totalPrice,
         totalQuantities,
         qty,

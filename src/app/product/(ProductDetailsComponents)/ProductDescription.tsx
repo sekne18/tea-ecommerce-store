@@ -9,7 +9,11 @@ import {
 } from "react-icons/ai";
 
 function ProductDescription({ product }: { product: ProductType }) {
-  const { decQty, incQty, qty, onAdd } = useStateContext();
+  const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
+  const handleBuyNow = () => {
+    onAdd(product, qty);
+    setShowCart(true);
+  };
   return (
     <div className="product-detail-desc">
       <h1>{product.name}</h1>
@@ -46,7 +50,7 @@ function ProductDescription({ product }: { product: ProductType }) {
         >
           Add to Cart
         </button>
-        <button type="button" className="buy-now">
+        <button type="button" className="buy-now" onClick={handleBuyNow}>
           Buy Now
         </button>
       </div>

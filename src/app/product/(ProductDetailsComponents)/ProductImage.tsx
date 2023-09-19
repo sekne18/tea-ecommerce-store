@@ -5,7 +5,7 @@ import { useStateContext } from "@/app/context/StateContext";
 
 function ProductImage({ product }: { product: ProductType }) {
   const [index, setIndex] = useState(0);
-  
+
   return (
     <div>
       <div className="image-container">
@@ -17,6 +17,7 @@ function ProductImage({ product }: { product: ProductType }) {
       <div className="small-images-container">
         {product.image?.map((item: string, i: number) => (
           <img
+            key={i}
             src={urlFor(item).url()}
             className={
               i === index ? "small-image selected-image" : "small-image"
