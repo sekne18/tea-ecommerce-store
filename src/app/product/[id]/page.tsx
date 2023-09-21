@@ -5,7 +5,10 @@ import ProductDescription from "../(ProductDetailsComponents)/ProductDescription
 import Product from "@/components/Product";
 import ProductImage from "../(ProductDetailsComponents)/ProductImage";
 
-async function getData(id: string) {
+async function getData(id: string): Promise<{
+  product: ProductType;
+  products: ProductType[];
+}> {
   const query = `*[_type == "product" && slug.current == '${id}'][0]`;
   const productsQuery = '*[_type == "product"]';
 
