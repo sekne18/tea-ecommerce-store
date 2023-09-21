@@ -29,5 +29,8 @@
     "stripe": "^8.222.0",
     "styled-components": "5.2",
     "typescript": "5.2.2"
+  },
+  "devDependencies": {
+    "@types/canvas-confetti": "^1.6.1"
   }
 }
