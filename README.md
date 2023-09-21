@@ -14,3 +14,5 @@ npm run dev
 - Global store (StateContext)
 - Strapi (payments)
 - Sanity (cms)
+
+You can take a look here -> https://magic-tea-ecommerce.netlify.app/
