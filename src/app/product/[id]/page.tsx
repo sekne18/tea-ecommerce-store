@@ -5,14 +5,14 @@ import ProductDescription from "../(ProductDetailsComponents)/ProductDescription
 import Product from "@/components/Product";
 import ProductImage from "../(ProductDetailsComponents)/ProductImage";
 
-export const getData = cache(async (id: string) => {
+async function getData(id: string) {
   const query = `*[_type == "product" && slug.current == '${id}'][0]`;
   const productsQuery = '*[_type == "product"]';
 
   const product = await client.fetch(query);
   const products = await client.fetch(productsQuery);
   return { product, products };
-});
+}
 
 async function ProductDetails({ params: { id } }: { params: { id: string } }) {
   const {
